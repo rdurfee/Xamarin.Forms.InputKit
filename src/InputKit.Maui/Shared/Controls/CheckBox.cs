@@ -306,7 +306,7 @@ public partial class CheckBox : StatefulGrid, IValidatable
                 return;
             }
 
-            this.Add(iconValidation.Value);
+            this.Add(iconValidation.Value, column: 2);
         }
 
         OnPropertyChanged(nameof(IsValid));
@@ -383,7 +383,8 @@ public partial class CheckBox : StatefulGrid, IValidatable
             ColumnDefinitions = new ColumnDefinitionCollection
             {
                 new ColumnDefinition { Width = GridLength.Auto },
-                new ColumnDefinition { Width = GridLength.Star }
+                new ColumnDefinition { Width = GridLength.Star },
+                new ColumnDefinition { Width = GridLength.Auto }
             };
             Grid.SetColumn(IconLayout, 0);
             Grid.SetColumn(contentHolder, 1);
@@ -392,6 +393,7 @@ public partial class CheckBox : StatefulGrid, IValidatable
         {
             ColumnDefinitions = new ColumnDefinitionCollection
             {
+                new ColumnDefinition { Width = GridLength.Auto },
                 new ColumnDefinition { Width = GridLength.Auto },
                 new ColumnDefinition { Width = GridLength.Auto }
             };
